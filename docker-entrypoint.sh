@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #example=/var/www/html/api/v1
-composer_location=/var/www/localhost/htdocs/api/v1
+#composer_location=/var/www/localhost/htdocs/api/v1
 
 # start apache
 httpd
@@ -19,7 +19,7 @@ if [ ! -d "/run/mysqld" ]; then
     mkdir -p /run/mysqld
 fi
 
-MYSQL_ROOT_PASSWORD="riosis"
+MYSQL_ROOT_PASSWORD="qwerty"
 
 
 
@@ -44,5 +44,3 @@ rm -f $tfile
 # start mysql
 # nohup mysqld_safe --skip-grant-tables --bind-address 0.0.0.0 --user mysql > /dev/null 2>&1 &
 exec /usr/bin/mysqld --user=root --bind-address=0.0.0.0
-composer install -d $composer_location
-cd $composer_location && composer dump-autoload
