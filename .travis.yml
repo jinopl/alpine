@@ -1,0 +1,11 @@
+language: php
+php:
+  - 7.2
+services:
+  - docker
+install:
+  - docker build -t alpinelamp .
+  - docker run -d -p 127.0.0.1:80:80 --name alpinelamp alpinelamp
+script:
+  - docker ps | grep -q alpinelamp
+
